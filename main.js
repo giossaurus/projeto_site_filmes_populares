@@ -25,15 +25,40 @@ const movies = [
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         isFavorited: false
       },
-
-
-
-
-
-
-
-
-
-
-
 ]
+
+window.onload = function() {
+    movies.forEach(movie => renderMovie(movie))
+}
+
+function renderMovie(movie) {
+
+    const { title, image, rating, year, description, isFavorited } = movie
+
+    const movieElement = document.createElement('div')
+    movieElement.classList.add('movie')
+    moviesContainer.appendChild('movieElement')
+
+    const movieInformations = document.createElement('div')
+    movieInformations.classList.add('movie-informations')
+
+    const movieImageContainer = document.createElement('div')
+    movieImageContainer.classList.add('movie-image')
+    const movieImage = document.createElement('img')
+    movieImage.src = image
+    movieImage.alt = `${title} Poster`
+    movieImageContainer.appendChild(movieImage)
+    movieInformations.appendChild(movieImageContainer)
+
+    const informations = document.createElement('div')
+    informations.classList.add('movie-informations')
+    movieTextContainer.appendChild(informations)
+
+
+
+
+
+
+
+
+}
