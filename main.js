@@ -54,11 +54,43 @@ function renderMovie(movie) {
     informations.classList.add('movie-informations')
     movieTextContainer.appendChild(informations)
 
+    const ratingContainer = document.createElement('div')
+    ratingContainer.classList.add('rating')
+    const starImage = document.createElement('img')
+    starImage.src = 'images/star.png'
+    starImage.alt = 'Star'
+    const movieRate = document.createElement('span')
+    movieRate.classList.add('movie-rate')
+    movieRate.textContent = rating
+    ratingContainer.appendChild(starImage)
+    ratingContainer.appendChild(movieRate)
+    informations.appendChild(ratingContainer)
 
+    const favorite = document.createElement('div')
+    favorite.classList.add('favorite')
+    const favoriteImage = document.createElement('img')
+    favoriteImage.src = isFavorited ? 'images/heart-fill.svg' : 'images/heart.svg'
+    favoriteImage.alt = 'Heart'
+    favoriteImage.classList.add('favoriteImage')
+    const favoriteText = document.createElement('span')
+    favoriteText.classList.add('movie-favorite')
+    favoriteText.textContent = 'Favoritar'
+    favorite.appendChild(favoriteImage)
+    favorite.appendChild(favoriteText)
+    informations.appendChild(favorite)
 
+    const movieDescriptionContainer = document.createElement('div')
+    movieDescriptionContainer.classList.add('movie-description')
+    const movieDescription = document.createElement('span')
+    movieDescription.textContent = description
+    movieDescriptionContainer.appendChild(movieDescription)
 
-
-
-
-
+    movieElement.appendChild(movieInformations)
+    movieElement.appendChild(movieDescriptionContainer)
 }
+
+
+
+
+
+
